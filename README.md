@@ -9,6 +9,8 @@
 [github-learn](https://github.com/0xAX/asm)
 x86
 
-## 架构
+## [架构](./architecture.md)
+
+## [resources](./resources.md)
 
 ## fo
