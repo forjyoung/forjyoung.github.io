@@ -1,6 +1,5 @@
 # luosheng
 
-
 ## 汇编语言
 
 [汇编语言入门教程 by 阮一峰](http://www.ruanyifeng.com/blog/2018/01/assembly-language-primer.html)  
@@ -14,3 +13,5 @@ x86
 ## [resources](./resources.md)
 
 ## fo
+
+## [books](./books.md)
