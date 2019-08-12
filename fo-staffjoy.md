@@ -1,4 +1,6 @@
-# staffjoy gradle version
+# staffjoy
+
+[git 仓库](https://github.com/oaol/fo-staffjoy)
 
 ## gradle 项目构建
 
