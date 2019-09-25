@@ -12,7 +12,18 @@
 8. 发布 image 文件
 9. 基于 nexus 的私有 docker 仓库
 
+## dockerfile
 
+sudo docker build -t image_name .
+
+## docker compose
+
+docker-compose up -d
+
+docker-compose start
+docker-compose stop
+docker-compose down --rmi all
+docker-compose exec xx bash
 
 ## 参考链接
 

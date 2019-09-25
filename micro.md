@@ -150,6 +150,60 @@ end to end 最佳实践
 
 单元测试单独的配置文件
 
+## 分环境
+环境变量
+
+## 日志
+
+结构化日志、审计日志
+
+## 容器化和 docker compose 部署
+
+本地开发环境
+switch hosts
+skywalking
+
+前台项目两阶段构建
+使用 .env 配置私密数据
+compose 部署可以统一默认端口为 80
+docker 访问本地数据库 mysql://host.docker.internal:prot/xx
+
+## k8s 环境部署
+
+集群
+容器调度平台
+pod > 容器
+副本集 replicaSet
+service,通过服务名寻址
+deployment,发布
+configMap,可变配置
+secret
+deamon set
+
+### k8s 网络
+
+节点网络， 节点之间通信寻址
+pod 网络，内容器共享网络栈
+service 网络
+nodepod, kube proxy
+ingress
+
+### 金丝雀发布
+
+先发布一个实例
+
+### ci/cd
+
+jenkins github/gitlab k8s 持续集成
+
+## 扩展
+
+1. https
+2. 测试
+3. ci/cd, jenkins
+4. 监控
+5. 帮助文档
+
 
 ## talk 
 
@@ -166,7 +220,33 @@ ReverseProxyFilter通过FilterRegistrationBean注册到Spring容器环境中，S
 
 在 jwt 的公私钥模式中，私钥存在 Auth 服务器上，不能存客户端，公钥一般也不存客户端(存网关或者后台服务器上)，即使存客户端也没有大关系，公钥本来就是公开的，只不过能够解签jwt，不能篡改数据。
 
+要想自动记录审计，可以参考一下HIbernate的Envers模块
+
+ 审计日志一般和重要的业务操作有关，可以手工埋点，实际也不是特别费事。当然，你可以考虑Spring AOP方式截获业务操作自动埋点，比如对Service或者Repository层通过aop截获写审计日志。
+
+Staffjoy教学版依赖一些私密配置，例如sentry-dsn和aliyun-access-key等等，这些私密配置不能checkin到github上，所以采用了Spring的一种私密配置机制，私密数据集中配置在config/application.yml中，这个文件在gitignore中，不会被checkin到github
+环境变量 spring.config.additinal-config ，读取指定配置后会继续读取默认配置
+
+
+clientid/secret不能放在js单页应用里头，这样做会导致clientid/secret泄漏，黑客就可以伪造非法应用。一般js应用可以用简化(implicit)模式，只需要存clientId(没有secret)，但是这种方式仅适合安全不严格的应用。如果安全严格，又需要js单页，那么建议引入proxy代理，clientId/secret配在代理上，单页js调用后台服务通过代理转发，这种方式类似Web应用的授权码模式。
+
+一个服务可以共用一个resttemaplate，resttemplate是线程安全的
+默认resttemplate每次新建一个HttpURLConnection，也可以配连接池
+
+
+没啥特别准备的，不要好高骛远，也不要妄自菲薄，去了先虚心学习，了解现状，然后找到一个自己能发挥作用的切入点，先落地下来
+
+
+没啥问题，拉代码->构建->测试->打镜像->推镜像->部署到k8s，都可以在jenkins中建流水线完成，这个就是CI/CD
+
+在github上配一个webhook，去触发你的jekins pipeline  
+
+也可以尝试travisci/circleci这些ci/cd服务  
+
+或者你找找jenkins插件，应该也有定期检测github的
 ## quote
 
+* kubernets in action
 * [分布式事务论文 dzone 《Data Consistency in Microservices Architecture》](https://dzone.com/articles/data-consistency-in-microservices-architecture), by 
 * [分布式事务开源解决方案-seata](https://github.com/seata/seata), by 阿里
+* [ci/cd](https://github.com/fleetman-ci-cd-demo)
