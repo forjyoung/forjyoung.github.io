@@ -349,7 +349,7 @@ cannot use base path as a request url. controller add a default path
 Client use feign.httpclient.ApacheHttpClient
 
 ```
- implementation 'org.apache.httpcomponents:httpclient:4.5.9'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.9'
     implementation 'io.github.openfeign:feign-httpclient'
 ```
 
@@ -358,6 +358,8 @@ gradle test does not exist
 > Task :account-svc:compileTestJava FAILED
 /Users/bryce/codes/ls/java/fo-staffjoy/account-svc/src/test/java/tech/staffjoy/account/controller/AccountControllerTest.java:11: error: package org.apache.commons.lang does not exist
 import org.apache.commons.lang.StringUtils;
+
+and fix feign get Bean issue
 
 TODO
 
@@ -379,4 +381,4 @@ TODO
 - [cannt find symbol](https://github.com/spring-projects/spring-boot/issues/11594)
 - [spring additional config](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html)
 - [aliyun mail](https://help.aliyun.com/document_detail/29459.html?spm=a2c4g.11186623.6.609.65f1778fWIROSf)
-
+- [k8s](https://mp.weixin.qq.com/s/q8ic-Ddht04WU4z1aTc0iA)
