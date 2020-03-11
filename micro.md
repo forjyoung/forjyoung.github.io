@@ -196,6 +196,12 @@ ingress
 
 jenkins github/gitlab k8s 持续集成
 
+## 分布式事务
+
+### Distributed Transaction(two phase commit)
+
+### Saga
+
 ## 扩展
 
 1. https
