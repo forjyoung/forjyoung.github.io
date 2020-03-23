@@ -202,6 +202,8 @@ jenkins github/gitlab k8s 持续集成
 
 ### Saga
 
+每项微服务都有自己的私有数据，不能使用传统的分布式事务（JTA/Raft等两段提交PC）
+
 ## 扩展
 
 1. https
@@ -249,7 +251,19 @@ clientid/secret不能放在js单页应用里头，这样做会导致clientid/sec
 
 也可以尝试travisci/circleci这些ci/cd服务  
 
-或者你找找jenkins插件，应该也有定期检测github的
+或者你找找jenkins插件，应该也有定期检测github的 
+
+Copy the questions, not the answers.
+
+中台：
+企业级能力复用平台
+函数->类->组件->服务->平台->中台，
+
+中台架构，可以作为互联网组织架构和系统架构的一个参考模型(如何设计组织架构和系统架构)。
+中台的核心是业务/技术能力的模块化和重用，目标是提升企业业务规模化的能力和快速响应市场需求的能力。
+
+ 你要有良好的系统抽象能力，有权支配组织甚至业务架构，可以搞搞中台
+
 ## quote
 
 * kubernets in action
