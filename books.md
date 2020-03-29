@@ -15,14 +15,13 @@
 * 持续演进的 Cloud Native 20200322
 * 未来架构：从服务化到云原生 20200322
 * Mysql 必知必会 20200322
-* 
+* 微服务架构设计模式, by Chris Richardson 20200329
 
 ## reading
 
 1. 星月神话
 2. 深入拆解 java 虚拟机
-3. 微服务架构设计模式, by Chris Richardson
-4. 软件架构
+3. 软件架构
 
 ## TODO
 

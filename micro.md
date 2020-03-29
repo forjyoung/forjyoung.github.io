@@ -264,6 +264,8 @@ Copy the questions, not the answers.
 
  你要有良好的系统抽象能力，有权支配组织甚至业务架构，可以搞搞中台
 
+ 事务拖尾日志，事务日志挖掘器
+
 ## quote
 
 * kubernets in action
